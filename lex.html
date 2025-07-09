@@ -8,47 +8,51 @@
 </head>
 <body>
 
-    <div class="encabezado">
-        <img src="img/image.png" alt="Lex Logo" class="icono-lex">
+    <header class="encabezado">
+        <img src="image.png" alt="Logo de Lex Intelligent" class="icono-lex">
         <div class="encabezado-texto">
             <h1>Lex Intelligent</h1>
-            <p>Bienvenido a Lex Intelligent, tu asistente de inteligencia artificial</p>
+            <p>Tu asistente de inteligencia artificial disponible 24/7</p>
         </div>
-    </div>
+    </header>
 
-    <div class="contenedor-chat">
-        <div class="mensajes" id="mensajes"></div>
+    <main class="contenedor-chat">
+        <section class="mensajes" id="mensajes"></section>
         <form class="formulario-chat" id="formulario-chat" autocomplete="off">
             <input class="entrada-chat" id="entrada-chat" type="text" placeholder="Escribe tu mensaje..." required />
             <button class="boton-enviar" type="submit">Enviar</button>
         </form>
-    </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p></p>
+    </footer>
 
     <script>
-    const mensajes = document.getElementById('mensajes');
-    const formulario = document.getElementById('formulario-chat');
-    const entrada = document.getElementById('entrada-chat');
+        const mensajes = document.getElementById('mensajes');
+        const formulario = document.getElementById('formulario-chat');
+        const entrada = document.getElementById('entrada-chat');
 
-    function agregarMensaje(texto, tipo) {
-        const div = document.createElement('div');
-        div.className = 'mensaje ' + tipo;
-        div.textContent = texto;
-        mensajes.appendChild(div);
-        mensajes.scrollTop = mensajes.scrollHeight;
-    }
+        function agregarMensaje(texto, tipo) {
+            const div = document.createElement('div');
+            div.className = 'mensaje ' + tipo;
+            div.textContent = texto;
+            mensajes.appendChild(div);
+            mensajes.scrollTop = mensajes.scrollHeight;
+        }
 
-    agregarMensaje('Hola, Soy Lex, tu asistente AI.', 'asistente');
+        agregarMensaje('¡Hola! Soy Lex, tu asistente AI.', 'asistente');
 
-    formulario.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const texto = entrada.value.trim();
-        if (!texto) return;
-        agregarMensaje(texto, 'usuario');
-        setTimeout(() => {
-            agregarMensaje('Usa chatgpt mijo...?', 'asistente');
-        }, 600);
-        entrada.value = '';
-    });
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const texto = entrada.value.trim();
+            if (!texto) return;
+            agregarMensaje(texto, 'usuario');
+            setTimeout(() => {
+                agregarMensaje('¿En qué puedo ayudarte hoy?', 'asistente');
+            }, 600);
+            entrada.value = '';
+        });
     </script>
 
 </body>
