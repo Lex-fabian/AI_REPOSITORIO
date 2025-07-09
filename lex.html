@@ -29,7 +29,7 @@
     const mensajes = document.getElementById('mensajes');
     const formulario = document.getElementById('formulario-chat');
     const entrada = document.getElementById('entrada-chat');
-
+    let modo = "deportivo";
     function agregarMensaje(texto, tipo) {
         const div = document.createElement('div');
         div.className = 'mensaje ' + tipo;
@@ -49,7 +49,23 @@
             agregarMensaje('Usa chatgpt mijo...?', 'asistente');
         }, 600);
         entrada.value = '';
-    });
+    
+    let respuesta;
+
+  if (modo === "deportivo") {
+    if (texto.toLowerCase().includes("hola")) {
+      respuesta = " ¡Qué onda, campeona! ¿Lista para patear tus dudas fuera del estadio?";
+    } else if (texto.toLowerCase().includes("entrenar")) {
+      respuesta = " ¡Eso! La disciplina es tu mejor aliada. ¿Qué vamos a trabajar hoy?";
+    } else {
+      respuesta = " Estoy listo como un entrenador virtual. ¿Qué jugada te gustaría aprender hoy?";
+    }
+  } else {
+    respuesta = "Estoy aquí para ayudarte  ¿En qué puedo asistirte hoy?";
+  }
+
+  agregarMensaje(respuesta, 'asistente');
+},600);
     </script>
 
 </body>
