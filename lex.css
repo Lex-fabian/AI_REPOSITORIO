@@ -1,122 +1,146 @@
+/* Estilos generales */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f8fafc;
+    font-family: 'Arial', sans-serif;
+    background-color: #F4ECE1;
     margin: 0;
     padding: 0;
-    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* Encabezado */
 .encabezado {
-    background: #fff;
-    padding: 40px 0 24px 0;
-    text-align: left;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    border-bottom: 1px solid #e5e7eb;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-header {
     display: flex;
     align-items: center;
-    gap: 32px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.icono-lex {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.encabezado-texto {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
 }
 
-.encabezado h1 {
+.imagen-header {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.texto-header h1 {
     font-size: 2.5rem;
-    font-weight: 600;
-    margin: 0 0 10px 0;
-    color: #3b82f6;
-    letter-spacing: 1px;
-}
-
-.encabezado p {
-    font-size: 1.2rem;
-    color: #64748b;
+    color: #333;
     margin: 0;
+    font-weight: bold;
 }
 
+.texto-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Contenedor del chat */
 .contenedor-chat {
-    max-width: 400px;
-    margin: 40px auto 0 auto;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    width: 100%;
+    max-width: 420px;
+    background-color: #FFF8F0;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    height: 500px;
     overflow: hidden;
 }
 
+/* Área de mensajes */
 .mensajes {
-    flex: 1;
-    padding: 24px 18px 12px 18px;
+    padding: 20px;
+    height: 360px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
+/* Estilos de los mensajes */
 .mensaje {
-    max-width: 80%;
-    padding: 10px 16px;
-    border-radius: 14px;
-    font-size: 1rem;
-    line-height: 1.5;
-    word-break: break-word;
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
 }
 
 .mensaje.usuario {
     align-self: flex-end;
-    background: #3b82f6;
-    color: #fff;
+    background-color: #ECD4B0;
+    color: #3C2E2A;
+    border-bottom-right-radius: 4px;
 }
 
 .mensaje.asistente {
     align-self: flex-start;
-    background: #e0e7ef;
-    color: #222;
+    background-color: #FFF8F0;
+    color: #3C2E2A;
+    border-bottom-left-radius: 4px;
 }
 
+/* Estilos del formulario de chat */
 .formulario-chat {
     display: flex;
-    border-top: 1px solid #e5e7eb;
-    background: #f8fafc;
-    padding: 12px 14px;
+    padding: 12px;
+    background-color: #FDF6EE;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .entrada-chat {
-    flex: 1;
-    border: none;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 1rem;
-    background: #f1f5f9;
+    flex-grow: 1;
+    padding: 10px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    font-size: 14px;
+    background: #FFF;
+    transition: border 0.2s;
+}
+
+.entrada-chat:focus {
+    border-color: #C77E58;
     outline: none;
 }
 
 .boton-enviar {
-    background: #3b82f6;
-    color: #fff;
+    margin-left: 10px;
+    background-color: #C77E58;
+    color: white;
     border: none;
-    border-radius: 8px;
-    padding: 10px 18px;
-    margin-left: 8px;
-    font-size: 1rem;
+    padding: 0 14px;
+    border-radius: 20px;
+    font-size: 16px;
     cursor: pointer;
     transition: background 0.2s;
 }
 
 .boton-enviar:hover {
-    background: #2563eb;
+    background-color: #B36948;
+}
+
+/* Animación de aparición de los mensajes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
