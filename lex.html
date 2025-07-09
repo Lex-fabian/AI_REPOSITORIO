@@ -7,7 +7,8 @@
     <title>Lex Intelligent</title>
 </head>
 <body>
-
+    
+    <main>
     <header class="encabezado">
         <img src="image.png" alt="Logo de Lex Intelligent" class="icono-lex">
         <div class="encabezado-texto">
@@ -49,7 +50,7 @@
             if (!texto) return;
             agregarMensaje(texto, 'usuario');
             setTimeout(() => {
-                agregarMensaje('¿En qué puedo ayudarte hoy?', 'asistente');
+                agregarMensaje('¿Vete a chatgpt?', 'asistente');
             }, 600);
             entrada.value = '';
         });

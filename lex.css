@@ -122,7 +122,6 @@ body {
     padding: 12px;
     cursor: pointer;
     font-size: 1.2rem;
-    transition: background 0.3s;
 }
 
 .boton-enviar:hover {
